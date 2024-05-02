@@ -9,8 +9,8 @@ html {
 }
 
 .page {
+  display: flex;
   inline-size: 1200px;
-  block-size: 100%;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -35,4 +35,263 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.content {
+  margin: 133px 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  gap: 30px;
+}
+/* Тут контейнер с видео */
+.result {
+  padding-top: 78px;
+  width: 711px;
+}
+
+.result__video-container {
+  position: relative;
+  height: 386px;
+  width: 711px;
+}
+
+.result__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+/* Поисковая форма */
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 40px;
+  margin-top: 16px;
+
+}
+
+.search-form__fieldset-title {
+  margin-bottom: 5px;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.search-form__textfield {
+  background-color: transparent;
+  color: #fff;
+  width: 100%;
+  appearance: none;
+  border: none;
+  border-top: #fff 1px solid;
+  border-bottom: 1px #fff solid;
+}
+
+.search-form__label {
+  cursor: pointer;
+  height: 27px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-form__textfield::placeholder {
+  color: #fff;
+  opacity: 70%;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  letter-spacing: 0.3px;
+}
+
+.search-form__fieldset {
+  border: none;
+  
+}
+
+.search-form__fieldset:first-of-type {
+  width: 225px;
+}
+
+.search-form__fieldset:nth-child(2) {
+  width: 212px;
+}
+
+/* чекбоксы */
+
+.search-form__checkbox + .search-form__pseudo-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 19px;
+  height: 19px;
+  border: 1px solid #fff;
+  margin-right: 5px;
+  margin-top: 1px;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: '';
+  display: block;
+  background-color: #FFF;
+  inline-size: 15px;
+  block-size: 15px;
+  margin: 1px;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+/* Кнопки */
+
+.button {
+  appearance: none;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  height: 34px;
+}
+
+.search-form__submit-button {
+  margin-top: 20px;
+  width: 194px;
+}
+
+.more-button {
+  width: 100%;
+}
+
+/* Блок с названием и списком видео */
+
+.content__details {
+  display: flex;
+  flex-direction: column;
+  width: 399px;
+  gap: 22px;
+}
+
+.title {
+  font-family: Oswald, serif;
+  font-weight: 700px;
+  font-size: 75px;
+  line-height: 0.94;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+/* Оформление списков */
+
+.content__list {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 298px;
+  width: 394px;
+  overflow: scroll;
+  gap: 30px;
+}
+
+.content__video-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 107px;
+  width: 400px;
+}
+
+.content__video-card-thumbnail {
+  width: 200px;
+  height: 107px;
+  object-fit: cover;
+}
+
+.content__video-card-description-container {
+  width: 202px;
+  height: 107px;
+  color: #fff;
+  text-decoration: none;
+  padding-left: 2px;
+}
+
+.content__video-card-title {
+  font-family: Oswald, serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  color: white;
+  overflow: hidden;
+
+}
+
+.content__video-card-description {
+  line-height: 16.2px;
+  color: white;
+}
+
+.content__card-link {
+  display: block;
+  text-decoration: none;
+}
+
+
+.content__card-link_current {
+  background-color: rgba(84, 80, 80, 1);
+}
+
+
+
+
+/* Стилизация состояний */
+
+.content__list-item:focus-visible,
+.search-form__textfield:focus-visible,
+.button:focus-visible,
+.search-form__label:focus-visible {
+  outline: 1px solid #fff;
+}
+
+.content__video-card-description:hover,
+.content__video-card:hover,
+.button:hover,
+.search-form__label:hover {
+  text-decoration: underline;
+  text-decoration-color: #fff;
+}
+
+.content__list-item:active,
+.button:active {
+  background-color: rgba(84, 80, 80, 1);
+}
+
+.search-form__textfield:active {
+  border: 1px #fff solid;
+}
+
+.content__list-item:focus,
+.search-form__textfield:focus,
+.button:focus,
+.search-form__label:focus {
+  outline: none;
 }
