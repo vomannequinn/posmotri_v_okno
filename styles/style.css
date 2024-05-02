@@ -11,7 +11,8 @@ html {
 .page {
   display: flex;
   inline-size: 1200px;
-  block-size: 800px;
+  block-size: 100%;
+  align-items: center;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
