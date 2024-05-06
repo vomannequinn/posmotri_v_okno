@@ -40,6 +40,7 @@ ol {
 }
 
 .content__list-item:focus,
+.content__card-link:focus,
 .search-form__textfield:focus,
 .button:focus,
 .search-form__label:focus,
@@ -206,7 +207,7 @@ ol {
 }
 
 .title {
-  font-family: Oswald, serif;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 75px;
   line-height: 0.94;
@@ -256,7 +257,7 @@ ol {
 }
 
 .content__video-card-title {
-  font-family: Oswald, serif;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   text-overflow: ellipsis;
@@ -282,18 +283,17 @@ ol {
 
 /* Стилизация состояний */
 
-.content__list-item:focus-visible,
+.content__card-link:focus-visible,
 .search-form__textfield:focus-visible,
 .button:focus-visible,
-.search-form__label:focus-visible,
-.search-form__pseudo-checkbox:focus-visible {
-  outline: 1px solid #fff;
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid white;
 }
 
 .content__video-card-description:hover,
 .content__video-card:hover,
 .button:hover,
-.search-form__label:not(:has(input[type='text'])):hover {
+.search-form__label:hover .search-form__label-text {
   text-decoration: underline;
   text-decoration-color: #fff;
 }
